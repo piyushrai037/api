@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": ["https://edunova-sati.web.app", "http://localhost:3000"]}})
 
 # Load API key from environment variable
 EDENAI_API_KEY = os.getenv("EDENAI_API_KEY")
